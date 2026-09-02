@@ -23,7 +23,7 @@ This project builds a full navigation stack that addresses this: Hybrid A* provi
 | Behavior Near Turns | Anticipatory corrections | Smooth but drifts |
 | Robustness to Mismatch | Strong — continuous reoptimization | Accumulates drift |
 
-PID achieves lower RMSE by cutting corners rather than following the nominal path. MPC-iLQR uses more control effort but maintains a safer, more intentional trajectory — especially near obstacles and tight turns.
+PID achieves lower RMSE by cutting corners rather than following the nominal path. MPC-iLQR uses more control effort but maintains a safer, more intentional trajectory, especially near obstacles and tight turns.
 
 **Overall:** MPC-iLQR > PID in robustness, obstacle awareness, and disturbance rejection. PID > MPC-iLQR in control smoothness and energy efficiency.
 
@@ -37,7 +37,7 @@ PID achieves lower RMSE by cutting corners rather than following the nominal pat
 
 MPC-iLQR (blue) stays tighter to the nominal Hybrid A* path (yellow dashed), especially through narrow corridors. PID (red) drifts outward in reactive regions. Both reach the goal, but MPC-iLQR makes fewer large corrections and is gently biased away from walls by soft obstacle costs.
 
-The velocity plot (top right) shows MPC-iLQR making aggressive early adjustments to align with the nominal heading, while PID ramps up smoothly but accumulates drift. The MPC horizon cost (bottom right) peaks between steps 40–80 as the robot navigates the most congested region, then drops as open space is reached — confirming the controller is sensitive to environmental complexity.
+The velocity plot (top right) shows MPC-iLQR making aggressive early adjustments to align with the nominal heading, while PID ramps up smoothly but accumulates drift. The MPC horizon cost (bottom right) peaks between steps 40–80 as the robot navigates the most congested region, then drops as open space is reached; confirming the controller is sensitive to environmental complexity.
 
 ---
 
