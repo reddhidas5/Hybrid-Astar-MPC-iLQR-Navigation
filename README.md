@@ -1,15 +1,13 @@
 # Hybrid A* and MPC-iLQR for Robust Differential-Drive Robot Navigation
 
-> A complete planning and control pipeline for differential-drive robot navigation in cluttered environments — combining Hybrid A* global path planning with MPC-iLQR local trajectory tracking under actuator noise, velocity mismatch, and heading drift.
+> A complete planning and control pipeline for differential-drive robot navigation in cluttered environments, combining Hybrid A* global path planning with MPC-iLQR local trajectory tracking under actuator noise, velocity mismatch, and heading drift.
 
 **Course:** ECE 592 · NC State University  
-**Author:** Reddhi Das (`rdas5@ncsu.edu`)
-
 ---
 
 ## Why This Project
 
-Classical controllers like PID react only to instantaneous error — they have no awareness of upcoming obstacles, turns, or accumulated drift. In cluttered environments with model mismatch and additive noise, this reactive approach causes corner-cutting, wall-grazing, and steady-state error that never fully resolves.
+Classical controllers like PID react only to instantaneous error. They have no awareness of upcoming obstacles, turns, or accumulated drift. In cluttered environments with model mismatch and additive noise, this reactive approach causes corner-cutting, wall-grazing, and steady-state error that never fully resolves.
 
 This project builds a full navigation stack that addresses this: Hybrid A* provides a globally feasible, kinematically consistent path, and MPC-iLQR tracks it in real time — anticipating turns, softly penalizing proximity to obstacles, and replanning automatically when disturbances push the robot too far off course.
 
